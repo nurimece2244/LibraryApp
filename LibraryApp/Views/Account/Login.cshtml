@@ -1,0 +1,25 @@
+﻿@model LoginViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <!-- Views/Account/Login.cshtml -->
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div>
+                <label asp-for="Username"></label>
+                <input asp-for="Username" />
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" />
+            </div>
+            <button type="submit">Giriş</button>
+        </form>
+    </div>
+</body>
+</html>
