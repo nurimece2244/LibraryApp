@@ -1,16 +1,18 @@
-﻿using LibraryApp.Models;
+﻿using LibraryApp.Data;
+using LibraryApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryApp.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly SignInManager<IdentityUser> _signInManager;
+    private readonly ApplicationDbContext _dbContext;
 
-    public AccountController(SignInManager<IdentityUser> signInManager)
+    public AccountController(ApplicationDbContext dbContext)
     {
-        _signInManager = signInManager;
+        _dbContext = dbContext;
     }
 
     [HttpGet]
@@ -20,21 +22,30 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login( LoginViewModel model)
+    public async Task<IActionResult> Login(User model)
     {
         if (!ModelState.IsValid)
         {
             return View(model);
         }
 
-        var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password, false, false);
-        
-        if (result.Succeeded)
+        var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Username == model.Username);
+        if (user == null)
         {
-            return RedirectToAction("Index", "Home");
+            ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
+            return View(model);
+        }
+
+        if (model.Password == user.Password )
+        {
+            // Kullanıcının oturumunu başlat
+            // Örneğin, oturum bilgisini bir cookie'ye ya da session'a kaydedebilirsiniz.
+
+            return RedirectToAction("ListBook", "Book");
         }
 
         ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
         return View(model);
     }
+    
 }

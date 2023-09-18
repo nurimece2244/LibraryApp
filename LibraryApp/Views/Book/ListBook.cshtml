@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Book>
+
+<a asp-action="AddBook" asp-controller="Book" class="btn btn-primary">Kitap Ekle</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Kitap Adı</th>
+        <th>Yazar</th>
+        <th>Resim</th>
+        <th>Aktif Mi?</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var book in Model)
+    {
+        <tr>
+            <td>@book.Name</td>
+            <td>@book.Author</td>
+            <td>
+                <img src="data:image/png;base64,@Convert.ToBase64String(book.Image)" width="100" />
+            </td>
+            <td>@(book.IsActive ? "Kütüphanede" : "Dışarıda")</td>
+            <td>
+                <a asp-action="LendBook" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-secondary">Ödünç Ver</a>
+            </td>
+
+        </tr>
+    }
+    </tbody>
+</table>
+
+

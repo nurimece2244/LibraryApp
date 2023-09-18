@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "7y/lKYsczQfgd0ENgn508l8uzIoCQyv2W30q0RTDZ7udX8DSmAQu5gm5euscM2xy1iockl5r3J/9zVU2O44YMQ==",
+  "dgSpecHash": "/COXnSwAvCiq0CXfUgYJfvrcDbUykCeGU9d0ZfNNm4LA67V43Cxu2TNyYuJ9kRzPatruEuKlE0UnEXr8i9W7SA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nur.imece\\RiderProjects\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,8 @@
     "C:\\Users\\nur.imece\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\nur.imece\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\nur.imece\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\nur.imece\\.nuget\\packages\\mysqlconnector\\2.2.5\\mysqlconnector.2.2.5.nupkg.sha512",
+    "C:\\Users\\nur.imece\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\7.0.0\\pomelo.entityframeworkcore.mysql.7.0.0.nupkg.sha512",
     "C:\\Users\\nur.imece\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\nur.imece\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.1\\system.configuration.configurationmanager.6.0.1.nupkg.sha512",
     "C:\\Users\\nur.imece\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
