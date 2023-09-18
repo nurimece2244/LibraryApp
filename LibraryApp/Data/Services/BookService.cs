@@ -12,7 +12,11 @@ public class BookService : IBookService
     {
         _dbContext = dbContext;
     }
-
+    
+    /*
+     * Kütüphanede bulunan kitaplar listelenmiştir.
+     * Ödünç alınan kitapların belirtilmesi için LendBook tablosuda dahil edilmiştir.
+     */
     public async Task<List<Book>> ListBook()
     {
         var books = await _dbContext.Book
@@ -22,7 +26,11 @@ public class BookService : IBookService
 
         return books;
     }
-
+    
+    
+/*
+ * Ödünç alınan kullanıcının bilgileri tutulmuş ve kitabın sistemde aktifliği kaldırılmıştır.
+ */
     public async Task LendBook( LendBook model )
     {
         var book = await _dbContext.Book
@@ -46,6 +54,7 @@ public class BookService : IBookService
         await _dbContext.SaveChangesAsync();
     }
 
+    // Kitap sisteme eklenmiştir.
     public async  Task<(bool, string)> AddBook( Book model )
     {
         var existBook = await _dbContext.Book.FirstOrDefaultAsync(u => u.Name == model.Name);

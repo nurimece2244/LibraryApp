@@ -14,6 +14,10 @@ public class AccountService: IAccountService
         _dbContext = dbContext;
     }
     
+    /*
+     * Kullanıcı girişi kontrol edilmiştir.
+     * Kullanıcı database üzerinden eklendiği için password hashlenmemiştir.
+     */
     public async Task<(bool, string)> Login(User model)
     {
 
