@@ -1,18 +1,17 @@
-﻿using LibraryApp.Data;
+﻿using LibraryApp.Interface;
 using LibraryApp.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace LibraryApp.Controllers;
 
 public class AccountController : Controller
 {
-    private readonly ApplicationDbContext _dbContext;
+    private readonly IAccountService _accountService;
 
-    public AccountController(ApplicationDbContext dbContext)
+    public AccountController(IAccountService accountService)
     {
-        _dbContext = dbContext;
+        _accountService = accountService;
     }
 
     [HttpGet]
@@ -29,23 +28,13 @@ public class AccountController : Controller
             return View(model);
         }
 
-        var user = await _dbContext.User.FirstOrDefaultAsync(u => u.Username == model.Username);
-        if (user == null)
+        var user = await _accountService.Login(model);
+        if (user.Item1 == false)
         {
             ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
             return View(model);
         }
 
-        if (model.Password == user.Password )
-        {
-            // Kullanıcının oturumunu başlat
-            // Örneğin, oturum bilgisini bir cookie'ye ya da session'a kaydedebilirsiniz.
-
-            return RedirectToAction("ListBook", "Book");
-        }
-
-        ModelState.AddModelError(string.Empty, "Geçersiz giriş denemesi.");
-        return View(model);
+        return RedirectToAction("ListBook", "Book");
     }
-    
 }

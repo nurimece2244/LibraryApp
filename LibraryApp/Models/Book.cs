@@ -12,4 +12,6 @@ public class Book
     [NotMapped]
     public IFormFile ImageFile  { get; set; }
     public bool IsActive { get; set; }
+    
+    public LendBook LendBook { get; set; }
 }

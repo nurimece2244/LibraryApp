@@ -20,10 +20,27 @@
             <td>
                 <img src="data:image/png;base64,@Convert.ToBase64String(book.Image)" width="100" />
             </td>
-            <td>@(book.IsActive ? "Kütüphanede" : "Dışarıda")</td>
-            <td>
-                <a asp-action="LendBook" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-secondary">Ödünç Ver</a>
-            </td>
+     <td>
+         @if(book.IsActive)
+         {
+             <text>Kütüphanede</text>
+             
+             <td>
+                 <a asp-action="LendBook" asp-controller="Book" asp-route-id="@book.Id" class="btn btn-secondary">Ödünç Ver</a>
+             </td>
+         }
+         else
+         {
+             if(book.LendBook != null)
+             {
+                 <text>@($"Dışarıda - {book.LendBook.BarrowName} {book.LendBook.BarrowSurname} - {book.LendBook.EndDate:dd.MM.yyyy}")</text>
+             }
+             else
+             {
+                 <text>Ödünç bilgisi mevcut değil</text>
+             }
+         }
+     </td>
 
         </tr>
     }

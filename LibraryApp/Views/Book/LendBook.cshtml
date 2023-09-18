@@ -1,8 +1,30 @@
-﻿@model Book
+﻿@model LendBook
+<link rel="stylesheet" href="~/css/site.css">
 
-@{
-    ViewBag.Title = "title";
-    Layout = "_Layout";
-}
-
-<h2>title</h2>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LendBook</title>
+</head>
+<body>
+<div>
+    <form asp-controller="Book" asp-action="LendBook" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="BookId" />
+        
+        <div>
+            <label asp-for="BarrowName"> Ödünç alanın adı </label>
+            <input asp-for="BarrowName"/>
+        </div>
+        <div>
+            <label asp-for="BarrowSurname"> Ödünç alanın soyadı </label>
+            <input asp-for="BarrowSurname"/>
+        </div>
+        <div>
+            <label asp-for="EndDate">Teslim Edeceği Tarih</label>
+            <input asp-for="EndDate"/>
+        </div>
+        <button type="submit"> Ödünç Ver </button>
+    </form>
+</div>
+</body>
+</html>

@@ -76,3 +76,8 @@ C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\runtimes
 C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\MySqlConnector.dll
 C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\Humanizer.dll
+C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\nur.imece\RiderProjects\LibraryApp\LibraryApp\bin\Debug\net7.0\System.CodeDom.dll
