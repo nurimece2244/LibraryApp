@@ -1,11 +1,10 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using LibraryApp.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryApp.Controllers;
 
-// Controllers/AccountController.cs
-
-public class AccountController
+public class AccountController : Controller
 {
     private readonly SignInManager<IdentityUser> _signInManager;
 
